@@ -442,3 +442,103 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор рекламы @fapcheck</title>
+    <style>
+        /* Все предыдущие стили остаются без изменений */
+        
+        .terms-container {
+            background: #fff5f5;
+            border-radius: 10px;
+            padding: 0;
+            margin: 20px 0;
+            border: 1px solid #ffebee;
+            overflow: hidden;
+        }
+        
+        .terms-header {
+            background: linear-gradient(135deg, #ff4d4f, #f5222d);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .terms-header:hover {
+            background: linear-gradient(135deg, #ff7875, #ff4d4f);
+        }
+        
+        .terms-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .terms-content.active {
+            padding: 15px 20px;
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        .terms-content p {
+            margin-bottom: 10px;
+            color: #595959;
+        }
+        
+        .terms-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .terms-icon {
+            transition: transform 0.3s;
+        }
+        
+        .terms-icon.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Весь предыдущий HTML остается без изменением до блока .result -->
+
+    <div class="container">
+        <!-- Добавляем блок с условиями перед итоговой стоимостью -->
+        <div class="terms-container">
+            <div class="terms-header" id="terms-header">
+                <span>⚠️ Условия рекламы</span>
+                <span class="terms-icon">▼</span>
+            </div>
+            <div class="terms-content" id="terms-content">
+                <p><strong>Внимание!</strong> Если после выхода рекламы на канале на вашу студию приходят отзывы за последний год, содержащие информацию о серьезных нарушениях в вашей студии, таких как присутствие несовершеннолетних, употребление наркотиков, деанон, шантаж, невыплаты, неправомерное отношение к моделям, систематическое нарушение субординации или использование подделок документов, либо если вы скрыли факт ребрендинга, то реклама будет удалена немедленно. В этом случае возврат денежных средств не производится.</p>
+                
+                <p><strong>Важно!</strong> Если в рекламе вы указываете студийный Telegram-канал и на вашем канале размещается реклама обменников токенов или других каналов, содержащих подобную информацию, а также реклама услуг по отрисовке документов или другие подобные материалы, то реклама будет удалена сразу же, и денежные средства не будут возвращены.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="result">
+        <!-- Блок с итоговой стоимостью остается без изменений -->
+    </div>
+
+    <script>
+        // Весь предыдущий JavaScript остается без изменений
+        
+        // Добавляем обработчик для условий рекламы
+        document.getElementById('terms-header').addEventListener('click', function() {
+            const content = document.getElementById('terms-content');
+            const icon = this.querySelector('.terms-icon');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
